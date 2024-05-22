@@ -60,7 +60,7 @@ When running test.sh, the top rows of the dataset (heart_df.show()) are visible 
 
 Our overall accuracy score was 87% and ROC was 72%. These scores are similar to the Kaggle project scores, and indicate that our model is effective in predicting heart disease. The high accuracy suggests that our model correctly classifies a significant proportion of instances, while the ROC score demonstrates that our model has a good balance between sensitivity and specificity. This indicates that our approach to data preprocessing, feature selection, and model tuning for logistic regression is robust and reliable for predicting heart disease.
 
-# 3: Logistic Regression Classifier on Census Income Data
+# 3: Census Income Level Predictions
 Our goal of this part was to create a logistic regression model, random forest model, and decision tree model to predict income levels based on demographic data. Using the Census Dataset from the UCI Machine Learning Repository, we trained a binary classifier to predict whether an individual's income exceeds $50K or not.
 ## **To run program**
 1. Navigate to the data folder ``` cd spark-examples/test-data/ ``` and ensure adult_data.csv is correctly uploaded
