@@ -40,6 +40,9 @@ Our goal here was to build a logistic regression model to classify internet comm
 2. Navigate to spark-examples/test-python/toxic-comment
 3. To run the full program, run the command ```spark-submit toxic-comment-classification.py```and confirm the output for the first 15 toxicity scores
 ### Example Output:
+![image](https://github.com/tonofclay1111/Spark-Examples/assets/164271616/9f343650-1c1e-4250-a4e3-0ead7d99d1cd)
+
+The results contain the probabilities for different toxicity labels.  The example output shows the first 15 comments. Inputs with probability values closer to 1 indicate comments that are more likely to be toxic. For example, the very first input in the screenshot has a score in the toxic column of .91. In this case, this comment would be flagged. Which would enable moderators to review the comment and facilitate the crackdown of harassment on the website.  
 
 
 
@@ -51,15 +54,21 @@ Our objective was to use logistic regression to predict the risk of heart diseas
 3. Ensure that there are 2 files there: heartlr.py and test.sh
 4. Run the code by executing the command ```bash test.sh```
 ### Example Output:
+![image](https://github.com/tonofclay1111/Spark-Examples/assets/164271616/b4843acd-32b8-431f-8ad3-68dc72772566)
 
+When running test.sh, the top rows of the dataset (heart_df.show()) are visible so we can confirm that the data is coming through and proceed with the rest of the code. 
+
+Our overall accuracy score was 87% and ROC was 72%. These scores are similar to the Kaggle project scores, and indicate that our model is effective in predicting heart disease. The high accuracy suggests that our model correctly classifies a significant proportion of instances, while the ROC score demonstrates that our model has a good balance between sensitivity and specificity. This indicates that our approach to data preprocessing, feature selection, and model tuning for logistic regression is robust and reliable for predicting heart disease.
 
 # 3: Logistic Regression Classifier on Census Income Data
 Our goal of this part was to create a logistic regression model, random forest model, and decision tree model to predict income levels based on demographic data. Using the Census Dataset from the UCI Machine Learning Repository, we trained a binary classifier to predict whether an individual's income exceeds $50K or not.
 ## **To run program**
 1. Navigate to the data folder ``` cd spark-examples/test-data/ ``` and ensure adult_data.csv is correctly uploaded
-3. Navigate to the python folder ``` cd spark-examples/test-python/adult-census ``` and ensure adult_log.py and test.sh files exist
-4. To run the full program, run bash test.sh and confirm the output.
-### Example Output:
+2. Navigate to the python folder ``` cd spark-examples/test-python/adult-census ``` and ensure adult_log.py and test.sh files exist
+3. To run the full program, run bash test.sh and confirm the output.
+### Results:
+1. Decision Tree: Accuracy = 84.01%; ROC = 68.61%
+2. Logistic Regression: Accuracy = 83.3%; ROC = 88.07%
+3. Random Forest: 83.97%; ROC = 89.62%
 
-
-
+The different models have varying strengths and weaknesses in predicting income levels based on the Census data. The Random Forest model provides the best balance of accuracy and ROC, making it the most robust model for predicting income levels in this dataset. The high ROC scores for Logistic Regression and Random Forest also suggest these models are better at distinguishing between income classes than the Decision Tree model.
